@@ -26,5 +26,3 @@ New-AZNetworkSecurityGroup -ResourceGroupName $RG -Location $Loc -Name 'AZ-PS-Se
 
 # Create VM w/ Assigned Networking:
 New-AZVM -Name 'AZ-PS-VM1' -ResourceGroupName $RG -Location $Loc -Size 'Standard_B1ms' -Credential (Get-Credential) -Image UbuntuLTS -OpenPorts 22,80 -VirtualNetworkName $VNetName -SubnetName 'AZ-PS-VSubnet' -SecurityGroupName 'AZ-PS-SecGrp' -PublicIPAddressName 'AZ-PS-IP'
-
-#Cred = rdadmin/adminall-pw+??
