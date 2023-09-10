@@ -1,6 +1,6 @@
 # AZ PS - Create VM v3 - Multiple AZ Cloud VMs
 
-# Create Variables:
+# Set Initial Variables:
 $RG='Demo-RG'
 $Location='WestUS2'
 $VNetName='Demo-VNet'
@@ -22,8 +22,7 @@ $VNet | Set-AZVirtualNetwork
 # Set VNet Subnet Variable:
 $Subnet = (Get-AZVirtualNetworkSubnetConfig -VirtualNetwork $VNet).Name
 
-# Create Multiple VMs
-
+# Create Multiple VMs:
 $adminCredential = Get-Credential -Message "Enter UN / PW for VM admin user"
 
 For ($i = 1; $i -le 3; $i++)
