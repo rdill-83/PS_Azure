@@ -1,6 +1,6 @@
 # AZ PS - NSG List All
 
-# List All NSGs + NSG Sec Rules & Associated NICs + Subnets & Output to CSV
+# List All NSGs + NSG Rules & Associated NICs + Subnets & Output to CSV
 
 $nsgs = Get-AzNetworkSecurityGroup
 
