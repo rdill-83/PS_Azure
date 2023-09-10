@@ -9,5 +9,5 @@ Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayNa
 Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayName,SignInName,ObjectType,RoleDefinitionName,Scope
 ```
 
-###### username should be in whatever syntax your org has ie first.last* or admin.*
+###### username should be in org specific syntax ie first.last* or admin.name*
 ###### astericks added so no need to type full UPN
