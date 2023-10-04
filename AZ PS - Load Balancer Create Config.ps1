@@ -6,6 +6,7 @@ cd mslearn-improve-app-scalability-resiliency-with-load-balancer
 bash create-high-availability-vm-with-sets.sh $RG
 #>
 
+# RG & Loc Variables:
 $RG = (Get-AZResourceGroup).ResourceGroupName
 $Loc = (Get-AZResourceGroup).Location
 
@@ -13,7 +14,7 @@ $Loc = (Get-AZResourceGroup).Location
 $PublicIP = New-AZPublicIPAddress -ResourceGroupName $RG -Location $Loc -AllocationMethod Static -Name 'myPublicIP'
 
 
-# Create a front-end IP
+# Create a front-end IP:
 $FrontEndIP = New-AZLoadBalancerFrontEndIPConfig -Name 'myFrontEnd' -PublicIPAddress $PublicIP
 
 # Create Load Balancer Section:
@@ -45,4 +46,4 @@ Set-AZNetworkInterface -NetworkInterface $nic2 -AsJob
 Write-Host http://$($(Get-AZPublicIPAddress -ResourceGroupName $RG -Name "myPublicIP").IpAddress)
 
 
-# Test Config by Browsing to Above Output
+# Test Config by Browsing to Above Output - Turn off 1 of the VMs if you'd like to
