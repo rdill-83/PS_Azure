@@ -1,10 +1,10 @@
-### Azure RBAC Role Revocation
+## Azure RBAC Role Revocation
 
-#### View Existing Azure RBAC Roles Assigned to User:
+### View Existing Azure RBAC Roles Assigned to User:
 ```
 Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayName,SignInName,ObjectType,RoleDefinitionName,Scope
 ```
-#### Remove All Azure RBAC Roles Assigned to User:
+### Remove All Azure RBAC Roles Assigned to User:
 ``` 
 Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayName,SignInName,ObjectType,RoleDefinitionName,Scope
 ```
