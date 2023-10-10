@@ -1,7 +1,7 @@
 # AZ-PS_LogAnalytics_Comp-LegacyAgent-Sources
 
 # RG To Variable:
-$RG = (Get-AZResourceGroup -ResourceGroupName rg-diag).ResourceGroupName
+$RG = (Get-AZResourceGroup -ResourceGroupName <YOUR-RG-NAME>).ResourceGroupName
 
 # Log Analytics Space to Variable:
 $LA = (Get-AZOperationalInsightsWorkspace -ResourceGroupName $RG).ResourceID
