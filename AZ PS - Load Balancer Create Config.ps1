@@ -1,4 +1,4 @@
-# AZ PS - Load Balancer Create Config
+# AZ PS - Load Balancer Create & Configure:
 
 <# GitHub Scripts: 
 git clone https://github.com/MicrosoftDocs/mslearn-improve-app-scalability-resiliency-with-load-balancer.git
@@ -6,15 +6,15 @@ cd mslearn-improve-app-scalability-resiliency-with-load-balancer
 bash create-high-availability-vm-with-sets.sh $RG
 #>
 
-# RG & Loc Variables:
+# Resource Group & Location Variables:
 $RG = (Get-AZResourceGroup).ResourceGroupName
 $Loc = (Get-AZResourceGroup).Location
 
-# create a new public IP address
+# Create a New Public IP address:
 $PublicIP = New-AZPublicIPAddress -ResourceGroupName $RG -Location $Loc -AllocationMethod Static -Name 'myPublicIP'
 
 
-# Create a front-end IP:
+# Create a Front-End IP:
 $FrontEndIP = New-AZLoadBalancerFrontEndIPConfig -Name 'myFrontEnd' -PublicIPAddress $PublicIP
 
 # Create Load Balancer Section:
