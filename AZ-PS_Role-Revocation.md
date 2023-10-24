@@ -1,4 +1,4 @@
-## Azure RBAC Role Revocation
+## Azure RBAC Role Revocation:
 
 ### View Existing Azure RBAC Roles Assigned to User:
 ```
