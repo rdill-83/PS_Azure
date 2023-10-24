@@ -5,6 +5,7 @@ $RG='Demo-RG'
 $Location='WestUS2'
 $VNetName='Demo-VNet'
 
+# Create Resource Group:
 New-AZResourceGroup -Name $RG -Location $Location
 
 # Create Virtual Network:
