@@ -30,5 +30,5 @@ For ($i = 1; $i -le 3; $i++)
 {
     $VMName = "Demo-VM" + $i
     Write-Host "Creating VM: " $VMName
-    New-AZVM -ResourceGroupName $RG -Name $VMName -Credential $adminCredential -Image UbuntuLTS -Size Standard_DS1_v2 -VirtualNetworkName $VNet -SubnetName $Subnet 
+    New-AZVM -ResourceGroupName $RG -Name $VMName -Credential $adminCredential -Image Ubuntu2204 -Size Standard_DS1_v2 -VirtualNetworkName $VNet -SubnetName $Subnet 
 }
