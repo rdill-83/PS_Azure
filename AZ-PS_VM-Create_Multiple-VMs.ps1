@@ -23,9 +23,10 @@ $VNet | Set-AZVirtualNetwork
 # Set VNet Subnet Variable:
 $Subnet = (Get-AZVirtualNetworkSubnetConfig -VirtualNetwork $VNet).Name
 
-# Create Multiple VMs:
+# VM Admin Creds to Variable:
 $adminCredential = Get-Credential -Message "Enter UN / PW for VM admin user"
 
+# Create Multiple VMs - ( 3 VMs Here ):
 For ($i = 1; $i -le 3; $i++)
 {
     $VMName = "Demo-VM" + $i
