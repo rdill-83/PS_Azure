@@ -104,6 +104,9 @@ Stop-AZVM -ResourceGroupName $RG -Name $VM.Name -Force
 # Add NIC to VM:
 Add-AZVMNetworkInterface -VM $VM -ID $NICID -Primary | Update-AZVM -ResourceGroupName $RG
 
+# Remove Auto Created / Non-Primary NIC:
+Remove-AZVMNetworkInterface -ID ((Get-AZVM -ResourceGroupname $RG -Name $VMName).NetworkProfile.NetworkInterfaces | Where {$_.Primary -eq $false}).ID -VM $VM | Update-AZVM
+
 # Start Target VM:
 Start-AZVm -ResourceGroupName $RG -Name $VM.Name -Verbose
 
@@ -112,6 +115,3 @@ Get-AZNetworkInterface -ResourceGroupName $RG -Name $NICName
 
 # View VM NIC Info:
 (Get-AZVM -ResourceGroupname $RG -Name $VMName).NetworkProfile.NetworkInterfaces
-
-# Remove Auto Created / Non-Primary NIC:
-Remove-AZVMNetworkInterface -ID ((Get-AZVM -ResourceGroupname $RG -Name $VMName).NetworkProfile.NetworkInterfaces | Where {$_.Primary -eq $false}).ID -VM $VM | Update-AZVM
