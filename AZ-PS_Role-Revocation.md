@@ -6,7 +6,7 @@ Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayNa
 ```
 ### Remove All Azure RBAC Roles Assigned to User:
 ``` 
-Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | FL DisplayName,SignInName,ObjectType,RoleDefinitionName,Scope
+Get-AZRoleAssignment | Where {$_.SignInName -like '<User.Name*>'} | Remove-AZRoleAssignment -Verbose
 ```
 
 ###### username should be in org specific syntax ie first.last* or admin.name*
