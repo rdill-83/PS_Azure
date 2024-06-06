@@ -1,10 +1,9 @@
-# Azure Basic Environment
+# Azure Basic Environment - Ubuntu Linus:
 
-# Set Variables:
+# Stock Variables:
 $RG = 'AZ-PS1'
 $Loc = 'WestUS'
 $VNetName = 'AZ-PS-VNet'
-
 
 # Create RG:
 New-AzResourceGroup -Name $RG -Location $Loc
@@ -25,4 +24,4 @@ $SecRule = New-AZNetworkSecurityRUleConfig -Name 'AZ-PS-NetRule' -Description 'A
 New-AZNetworkSecurityGroup -ResourceGroupName $RG -Location $Loc -Name 'AZ-PS-SecGrp' -SecurityRules $SecRule
 
 # Create VM w/ Assigned Networking:
-New-AZVM -Name 'AZ-PS-VM1' -ResourceGroupName $RG -Location $Loc -Size 'Standard_B1ms' -Credential (Get-Credential) -Image UbuntuLTS -OpenPorts 22,80 -VirtualNetworkName $VNetName -SubnetName 'AZ-PS-VSubnet' -SecurityGroupName 'AZ-PS-SecGrp' -PublicIPAddressName 'AZ-PS-IP'
+New-AZVM -Name 'AZ-PS-VM1' -ResourceGroupName $RG -Location $Loc -Size 'Standard_B1ms' -Credential (Get-Credential) -Image Ubuntu2204 -OpenPorts 22,80 -VirtualNetworkName $VNetName -SubnetName 'AZ-PS-VSubnet' -SecurityGroupName 'AZ-PS-SecGrp' -PublicIPAddressName 'AZ-PS-IP'
