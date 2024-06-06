@@ -1,10 +1,9 @@
-# Azure Basic Environment
+# Azure Basic Environment - Windows:
 
-# Set Variables:
+# Stock Variables:
 $RG = 'AZ-PS1'
 $Loc = 'WestUS'
 $VNetName = 'AZ-PS-VNet'
-
 
 # Create RG:
 New-AzResourceGroup -Name $RG -Location $Loc
